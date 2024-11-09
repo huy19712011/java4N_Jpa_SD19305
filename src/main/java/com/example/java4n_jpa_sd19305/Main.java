@@ -14,7 +14,26 @@ public class Main {
 
         EntityManager em = emf.createEntityManager();
 
+        Product productA = new Product(1, "Product A");
+        Product productB = new Product(2, "Product B");
+
+        em.getTransaction().begin();
+
+        em.persist(productA);
+        em.persist(productB);
+
+        productB.setName("BB");
+
+        em.getTransaction().commit();
+
+
+
+
         em.createQuery("select p from Product p", Product.class)
+                .getResultList()
+                .forEach(System.out::println);
+
+        em.createNativeQuery("select * from products10", Product.class)
                 .getResultList()
                 .forEach(System.out::println);
     }
