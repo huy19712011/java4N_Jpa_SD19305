@@ -7,6 +7,13 @@
 <body>
 <h1><%= "Hello World!" %>
 </h1>
+<form action="filterInput">
+    <input type="text" name="name">
+    <br>
+    <input type="text" name="password">
+    <br>
+    <button type="submit">Submit</button>
+</form>
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
 </body>
